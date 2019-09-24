@@ -1,0 +1,54 @@
+{
+  "name": "StopWatchES6",
+  "version": "1.0.0",
+  "description": "https://github.com/Nieokorzesany/StopWatchES6",
+  "main": "index.js",
+  "scripts": {
+    "start:": "http-server",
+    "test": "npm run test:html",
+    "test:html": "globstar nu-html-checker *.html",
+    "init-project": "npm install && npm-run-all init:*",
+    "init:dirs": "mkdirp sass css vendor images js",
+    "init:files": "touch README.md index.html sass/style.scss js/script.js",
+    "init:gitignore": "curl https://raw.githubusercontent.com/github/gitignore/master/Node.gitignore -o .gitignore",
+    "build:autoprefixer": "autoprefixer-cli css/style.css",
+    "build:sass": "node-sass --output-style expanded --source-map true -o css sass",
+    "watch": "npm-run-all -p watch:*",
+    "watch:babel": "babel js/script.js --watch --out-file script-compiled.js",
+    "watch:sassprefixer": "onchange -d 100 sass -- npm run watchsass",
+    "watchsass": "npm run build:sass && npm run build:autoprefixer",
+    "watch:browser-sync": "browser-sync start --server --files css/*.css *.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Nieokorzesany/StopWatchES6"
+  },
+  "author": "Piotr Wlazeł",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nieokorzesany/StopWatchES6/issues"
+  },
+  "homepage": "https://github.com/Nieokorzesany/StopWatchES6#readme",
+  "dependencies": {
+    "eslint": "^5.16.0",
+    "mkdirp": "^0.5.1",
+    "normalize.css": "^8.0.1",
+    "superagent": "^3.7.0",
+    "http-server": "^0.11.1"
+  },
+  "devDependencies": {
+    "@babel/preset-react": "^7.0.0",
+    "autoprefixer-cli": "^1.0.0",
+    "babel-cli": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-latest": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "browser-sync": "^2.26.3",
+    "globstar": "^1.0.0",
+    "http-server": "^0.11.1",
+    "node-sass": "^4.11.0",
+    "npm-run-all": "^4.1.5",
+    "nu-html-checker": "^0.1.0",
+    "onchange": "^5.2.0"
+  }
+}

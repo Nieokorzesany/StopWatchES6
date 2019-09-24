@@ -1,0 +1,62 @@
+body {
+  margin: 0;
+  text-align: center;
+}
+
+.controls {
+  margin: auto;
+  width: 600px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.controls button {
+  border-radius: 15px;
+  padding: 20px;
+  margin: 20px;
+  border: 3px solid black;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.controls button:visited {
+  color: black;
+}
+
+.stopwatch {
+  text-align: center;
+  margin: 40px 0;
+  font-size: 50px;
+  font-weight: bolder;
+  padding-bottom: 50px;
+}
+
+.resetList {
+  margin: 30px auto;
+  padding: 20px;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  border: 3px solid black;
+}
+
+.resetList:visited {
+  color: black;
+}
+
+.results {
+  width: 400px;
+  margin: 50px auto;
+  list-style: none;
+}
+
+.results li {
+  font-size: 35px;
+  font-weight: bold;
+}
+/*# sourceMappingURL=style.css.map */
